@@ -47,7 +47,6 @@ with app.app_context():
 def Home():
     row_review = User.query.all()
     users_data = [r.to_dict() for r in row_review]
-    # review = jsonify(users_data)
     return render_template('index.html',review=users_data)
 
 @app.route('/review',methods=['POST'])
